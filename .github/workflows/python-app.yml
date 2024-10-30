@@ -1,6 +1,7 @@
 name: Python Application
 
 on:
+  push
   schedule:
     - cron: '50 21 * * 1'  # 月曜日 6:50 JST (21:50 UTC 前日)
     - cron: '20 23 * * 2'  # 火曜日 8:20 JST (23:20 UTC 前日)
@@ -28,4 +29,4 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run Python script
-      run: python main.py
+      run: python train_delay.py
